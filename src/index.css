@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-cyan: #00e5ff;
+  --color-brand-cyan-light: #7df9ff;
+  --color-brand-violet: #b535f6;
+  --color-brand-bg: #0b1020;
+  --color-brand-surface: #151b2b;
+  --color-brand-surface-highlight: #1e2638;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-brand-bg);
+  color: #f1f5f9;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+}
+
+@keyframes fxRise {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fx-rise {
+  animation: fxRise 300ms ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-rise {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
